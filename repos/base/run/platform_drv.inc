@@ -51,7 +51,7 @@ proc append_platform_drv_config {} {
 	if {[have_spec acpi]} {
 
 	append config "
-	<start name=\"acpi_drv\"[platform_drv_priority]>"
+	<start name=\"acpi_drv\" [platform_drv_priority]>"
 
 	append config {
 		<resource name="RAM" quantum="5M" constrain_phys="yes"/>
@@ -62,7 +62,7 @@ proc append_platform_drv_config {} {
 		<route> <any-service> <parent/> </any-service> </route>
 		<config>
 			<policy label="acpi_drv"> <pci class="ALL"/> </policy>}
-	
+
 	append config [platform_drv_policy]
 
 	append config {
@@ -74,7 +74,7 @@ proc append_platform_drv_config {} {
 	if {[expr ![have_spec acpi] && [have_spec pci]]} {
 
 	append config "
-	<start name=\"pci_drv\"[platform_drv_priority]>"
+	<start name=\"pci_drv\" [platform_drv_priority]>"
 
 	append config {
 		<resource name="RAM" quantum="3M" constrain_phys="yes"/>
